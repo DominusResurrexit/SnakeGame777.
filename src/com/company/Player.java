@@ -6,13 +6,14 @@ public class Player {
     private int length;
     private int points;
 
-    private MovementVector direction;
+    protected MovementVector direction;
 
-    //public final static int DEFAULT_LENGTH_
+    private PlayerState playerState;
+    //public final static int DEFAULT_LENGTH = 3;
+
 
     public Player(String name) {
         this.name = name;
-        this.direction = Settings.DEFAULT_DIRECTION;
     }
 
     public Player(String name, int length) {
@@ -20,4 +21,43 @@ public class Player {
         this.length = length;
     }
 
+    public void addLength() {
+        length++;
+    }
+
+    public void addPoints() {
+        points++;
+    }
+
+    public int getLength() {
+        return length;
+    }
+
+    public void setLength(int length) {
+        this.length = length;
+    }
+
+    public int getPoints() {
+        return points;
+    }
+
+    public void setPoints(int points) {
+        this.points = points;
+    }
+
+    public MovementVector getDirection() {
+        return direction;
+    }
+
+    public void setDirection(MovementVector direction) {
+        this.direction = direction;
+    }
+
+    public PlayerState getPlayerState() {
+        return playerState;
+    }
+
+    public void setPlayerState(PlayerState playerState) {
+        this.playerState = playerState;
+    }
 }

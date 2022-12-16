@@ -10,6 +10,17 @@ public class Cell {
         this.lifeTime = lifeTime;
     }
 
+    public Cell(CellState cellState) {
+        this(cellState, 0);
+    }
+
+    public void minimize() {
+        lifeTime--;
+        if(lifeTime == 0){
+            this.cellState = cellState.FREE;
+        }
+    }
+
     public CellState getCellState() {
         return cellState;
     }
@@ -24,10 +35,5 @@ public class Cell {
 
     public void setLifeTime(int lifeTime) {
         this.lifeTime = lifeTime;
-    }
-
-    public Cell(CellState cellState) {
-        this.cellState = cellState;
-        this.lifeTime =0;
     }
 }
